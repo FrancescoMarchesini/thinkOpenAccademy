@@ -13,5 +13,5 @@ Di seguito tutte le applicazione fatte durante il corso
 ## App_04_rest
 ## App_04_rest_bk
 ## App_04_Ajax
-## App_05_mobile_first
+## App_05_git
 ## Curriculum Vitae
