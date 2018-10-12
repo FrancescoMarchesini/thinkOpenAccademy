@@ -1,6 +1,6 @@
 # ThinkOpen Accademy
 
-Di seguito tutte le applicazione fatte durante il corso
+Di seguito tutte le applicazione fatte durante il corso, ancora tutte da rivedere e da sistemare :)
 
 ## App_default
 ## App_00_Exercise
