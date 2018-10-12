@@ -1,0 +1,36 @@
+// CSS e Javascript 
+
+.classe_prova{}
+
+L'id ha proprietà che valgono su quelle della classe
+#id_prova{}
+
+Vanilla Javascript
+Javascript puro ES5
+
+
+
+auto-prefix.
+
+posizione absolute è una 
+position: relative  
+width heigt: 100%
+
+posizione abosulte fa in modo che un elemento diventi assoluto nella posizione quindi 
+un nuovo contesto
+
+-------------------------------------------
+pseudo classi CSS
+
+hover
+active
+focus
+
+.classe:pseudoclasse{}
+
+transizioni{
+    
+}
+
+
+//

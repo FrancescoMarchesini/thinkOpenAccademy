@@ -1,0 +1,33 @@
+lezione javascript 09/10/2018
+
+Scopo della programmazione è scrivere algoritmi
+
+Analisi:
+    è un insieme di attività preliminari che servono per risolvere un problema utilizzando un computer
+
+Cose un linguaggio di programmazione:
+    è un linguaggio rigorso per permettere di formalizzare un algoritmo in un programma
+
+es:
+    Dato un mazzo di 40 carte ordinale ordinarle per classi quadri, fiori, picche, inoltre le carte devono essere odirndate dall'asso al re
+
+Data type:
+    numeri
+    stringhe
+    boolean
+    undefined --> una variabile è stata crata ma non è stato assegnato nessun valore
+    null --> una variabile avente valore uguale a null
+
+dichiarazione di varibile :
+    var "nome_variabile"
+
+es:
+    marco e luca voglio conoscere il loro indice di massa corporea BMI = massa / (altezza * altezza). Ognuno dei due vuole sapere chi ha il BIM più alto
+
+N.B : meno scrivi meno errori farai
+
+Tutto avascript è un unico gigantesco oggetto
+
+ad ogni funzione viene chiamto il this 
+
+Hoisting

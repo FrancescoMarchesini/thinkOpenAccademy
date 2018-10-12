@@ -1,0 +1,9 @@
+.basic{
+    border:2px solid gray;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,188 @@
+.spaziatura1{
+    padding-bottom: 60px;
+}
+
+.listato{
+    padding-left: 23%;
+}
+
+.resize_icon{
+    font-size: 35px;
+    top:10px;
+}
+
+.resize_icon2{
+    top: 15px;
+    font-size: 25px;
+}
+
+
+.padding-logo-dx{
+    padding-left: 155px;
+}
+
+.padding-first-bar{
+    padding-bottom: 40px;
+    padding-left: 99px;
+}
+
+.padding-nav{
+    padding-bottom: 80px;
+    padding-left: 100px;
+   
+}
+
+.padding-icon{
+    padding-left: 96px;
+}
+
+.testo{
+    margin: 6px 4px -7px;
+}
+
+.scritte{
+    color:#ffffff;
+}
+
+.scritte1{
+    color:#333333;
+}
+
+.navbar-nav > li{
+    margin-left:30px;
+    margin-right:30px;
+  }
+
+  /* funnzione css per la creazione della sticky bar */
+  .sticky{
+      position: fixed;
+      top: 0px;
+      width: 100%;
+      z-index: 2000;
+  }
+
+  /* metto un po di padding per far si che la bar non si ingobbi */
+  .sticky + .content{
+      padding-top: 60px;
+  }
+
+.test{
+    top: 0px;
+    width: 100%;
+    z-index: 2000;
+    background-color:black;
+}
+
+.nav-border{
+ border-radius: 0px;
+}
+/*---------------------------------------------------------------------------------*/
+/*funzioni css per il body del documento*/
+/*----------------------------------------------------------------------------------*/
+
+/*primo div del container centrale*/
+
+.general_padding{
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.set {
+    margin-bottom: 0px;
+    margin-top : -20px;
+    height: 520px;
+    background-color: gray;
+};
+
+.dim_first{
+    height: 520px;
+    height: 520px;
+}
+.center{
+    margin: auto;  
+    width: 400px;
+    height: 400px;
+    border: 5px solid rgb(63, 60, 60);
+    padding-top: 126px;
+    border-radius: 200px;
+    background-color: black
+}
+.center-small{
+    width: 140px;
+    height: 110px;
+    background-color: gray;
+}
+/*secondo------------------------------------*/
+.height_size{
+    height: 517px;
+}
+
+.db{
+    border: 1px solid rgb(63, 60, 60);
+}
+.second{
+    background-color: #ffffff;
+    height: 1182px;
+}
+
+.features{
+    background-color: red;
+   
+}
+
+.zero_padding{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.color{
+    background: #ffffff;
+}
+
+.half-height{
+    height: 259px;
+}
+
+.center_quad{
+    width: 150px; 
+    height: 150px;
+    background-color: #f3834f;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.center_circle{
+    width: 14px;
+    height: 14px;
+    background-color: #f3834f;
+    margin-top: -105px;
+    margin-left: 340px;
+    border-radius: 200px;
+}
+
+.center_circle_1{
+    width: 50px;
+    height: 70px;
+    background-color: #ffffff;
+    border-radius: 35px;
+}
+/*terzo----------------------------------*/
+
+.third{
+    background-color: #333333;
+    height: 667px;
+    margin-top: -10px;
+}
+
+/*css test*/
+.dispari{
+    background-color: aqua;
+}
+.pari{
+    background-color: blue;
+}
+
+.orizzontale{
+    background-color: green;
+}
+

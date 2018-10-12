@@ -1,0 +1,16 @@
+#body{
+    background-color: rgba(94, 94, 17, 0.479);
+}
+.carta{
+    border: 2px solid red;
+    height: 200px;
+}
+
+.prova{
+    border: 2px solid red;
+}
+
+.test2{
+    width: 100%;
+    height: 100%;
+}

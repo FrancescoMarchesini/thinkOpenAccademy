@@ -1,0 +1,18 @@
+.dim_h{
+    height:1240px;
+    border: 0.5px solid black;
+}
+
+.arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    
+    border-top: 20px solid #f00;
+  }
+
+  .center{
+      margin:0 auto;
+      
+  }

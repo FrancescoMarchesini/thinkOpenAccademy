@@ -1,0 +1,173 @@
+.spaziatura1{
+    padding-bottom: 20px;
+}
+
+.listato{
+    padding-left: 20%;
+}
+
+.resize_icon{
+    font-size: 35px;
+    top:10px;
+}
+
+.resize_icon2{
+    top: 15px;
+    font-size: 25px;
+}
+
+.xxx{
+    font-size: 2000px;
+    padding-top: 300px;
+}
+
+.padding-logo-sx{
+    /*padding-left: 200px;*/
+}
+
+.padding-logo-dx{
+    padding-left: 155px;
+}
+
+.testo{
+    margin: 6px 4px -7px;
+}
+
+.scritte{
+    color:#ffffff;
+}
+
+.scritte1{
+    color:#333333;
+}
+
+.navbar-nav > li{
+    margin-left:30px;
+    margin-right:30px;
+  }
+
+  /* funnzione css per la creazione della sticky bar */
+  .sticky{
+      position: fixed;
+      top: 0px;
+      width: 100%;
+      z-index: 2000;
+  }
+
+  /* metto un po di padding per far si che la bar non si ingobbi */
+  .sticky + .content{
+      padding-top: 60px;
+  }
+
+
+/*---------------------------------------------------------------------------------*/
+/*funzioni css per il body del documento*/
+/*----------------------------------------------------------------------------------*/
+
+/*
+  valori generali 
+*/
+
+/*css test*/
+.dispari{
+    background-color: aqua;
+}
+.pari{
+    background-color: blue;
+}
+
+.orizzontale{
+    background-color: green;
+}
+
+/*--------------------------------------------------*/
+
+/*primo div del container centrale*/
+.first{
+    background-color: gray;
+}
+
+.general_padding{
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.set {
+    margin-bottom: 0px;
+    margin-top : -20px;
+    height: 520px;
+};
+
+.dim_first{
+    height: 520px;
+    height: 520px;
+}
+
+.tondo{
+    width: 400px;
+    height: 400px;
+    background: rgb(0, 0, 0);
+    border: 5px solid rgb(69, 69, 69);
+    border-radius: 300%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tondo_in{
+    width: 120px;
+    height: 120px;
+    background: rgb(114, 114, 114);
+}
+
+.culo{
+    background: red;
+}
+
+.margine{
+    margin-top: 50px;
+}
+
+.margine_dopo{
+    margin-bottom: 50px;
+}
+
+.testo_opus{
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    padding-top: 40px;
+    
+}
+/*seconda parte della pagina*/
+.second{
+    background-color: #ffffff;
+    height: 1182px;
+}
+
+.paddinglogo2{
+    padding-left: 129px;
+    padding-top: 0px;
+}
+
+.paddingImgLogo{
+    padding-left: 160px;
+    padding-top: 10px;
+}
+
+/*tesrza parte della pgina*/
+.third{
+    background-color: #333333;
+    height: 667px;
+    margin-top: -10px;
+}
+
+
+
+/*
+    per centrare gli oggetti giocare su margin 
+    si puo utilizzare transfoport traslate
+
+*/

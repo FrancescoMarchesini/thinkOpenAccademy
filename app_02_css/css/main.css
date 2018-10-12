@@ -1,0 +1,58 @@
+/*.main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}*/
+
+.features{
+    width: 400px;
+    height: 400px;
+    background-color: aqua;
+    border-radius: 2px solid black;
+    border-radius: 300%;
+}
+
+.center_left_up{ 
+    position: absolute;
+    top:25%;
+    left:40%;
+}
+
+.center_element{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hover-class-active:hover{
+    background-color: black;
+}
+
+.hover-class-active:focus{
+    background-color: rgb(255, 0, 0);
+}
+
+.yo{
+    animation-name: changeColor;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+@keyframes changeColor{
+    from{
+        background-color: black;
+        width: 0%;
+        height: 0%;
+        border-radius: 0%;
+        -webkit-transform: scale(1.1) rotate(-5deg);
+    }
+    to{
+        background-color: red;
+        width: 50%;
+        height: 50%;
+        border-radius: 300%;
+        -webkit-transform: scale(22.1) rotate(360deg);
+    }
+}

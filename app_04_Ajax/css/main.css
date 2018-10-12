@@ -1,0 +1,21 @@
+.basic{
+    border:2px solid gray;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.togliMarginForm{
+    margin-bottom: 0px;
+}
+
+.mycontainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
