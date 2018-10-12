@@ -52,18 +52,49 @@ git config --global core.editor "editor"
     ```sh
     echo "nome file da ignorare" >> .gitignore
     ```
-## Branch
+### Branch
 * Fare un branch dal mastert
     ```sh
     git branch "nome del branch"
     ```
-* spostarsi dal mastest al branch
+* spostarsi dal master al branch
     ```sh
     git chekout "nome del branch"
     ```
-## Merge
-    * unire il branch al master da chiamare dal master
+* vedere su che branch si è, l'asterisco(*) fa vedre dove si è
+    ```sh
+    git branch -a
+    ```
+* cancellare il branch, **N.B:** Da fare solo quando si è fatto il merge con il master.
+    ```sh
+    git branch -d "nome del branch"
+    ```
+### Merge
 
-```sh
-git merge "nome del branch"
-```
+* unire il branch al master da chiamare dal master
+
+    ```sh
+    git merge "nome del branch"
+    ```
+
+### Comandi fighi
+
+* vedere tutti i vari commit e i corrispettivi grafi
+    ```sh
+    git log --graph --decorate
+    ```
+
+### Comandi Utilità
+
+* cambiare il nome del file per prevenire che git non sappia più dove il file
+    ```sh
+    git mv "file" "nuovo_nome"
+    ```
+* cancellare il file
+    ```sh
+    git rm "nome file"
+    ```
+* Reset delle case fatte
+    ```sh
+    git reset HEAD "nome file"
+    ```
