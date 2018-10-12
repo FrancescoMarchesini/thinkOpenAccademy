@@ -52,3 +52,18 @@ git config --global core.editor "editor"
     ```sh
     echo "nome file da ignorare" >> .gitignore
     ```
+## Branch
+* Fare un branch dal mastert
+    ```sh
+    git branch "nome del branch"
+    ```
+* spostarsi dal mastest al branch
+    ```sh
+    git chekout "nome del branch"
+    ```
+## Merge
+    * unire il branch al master da chiamare dal master
+
+```sh
+git merge "nome del branch"
+```
