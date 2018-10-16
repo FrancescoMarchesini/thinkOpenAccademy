@@ -1,116 +1,238 @@
 /**
- * funzione onload per fare la richiesta di tutti i pokemon
- * nel momento in cui si è caricata tutta la pagina
- */
-window.onload = function () {
-    searchPoke(`https://pokeapi.co/api/v2/pokemon/`).then(function (text) {
-        getPockemonNameList(text);
-    }, function (error) {
-        console.log(`fallito ${error}`);
-    });
-};
-
-
-/**
- * Funzione promise con callback per fare la richiesta verso il server
- */
-searchPoke = (url) => {
-    return new Promise(function (succed, fail) {
-        let req = new XMLHttpRequest();
-        req.open("GET", url, true);
-        req.addEventListener("load", function () {
-            if (req.status < 400)
-                succed(JSON.parse(req.responseText));
-            else
-                fail(new Error(`Request failed:${req.statusText}`));
-        });
-        req.send();
-    });
-}
-
-/**
- * funzione per riempire il vettore con i nomi di tutti pokemon
- */
-let pockemonNameList = [];
-getPockemonNameList = (responseJson) => {
-    for (let i = 0; i < responseJson["count"]; i++) {
-        pockemonNameList[i] = responseJson["results"][i].name;
-    }
-}
-
-/**
- * funzioni per la ricerca del pokemon tramite bottoni
- */
-const uri = `https://pokeapi.co/api/v2/pokemon/`;
-let count = 1;
-queryNextPockemon = (responseJson) => {
-    console.log(`eseguo funzione next pockemon`);
-    searchPoke(`${uri}${count}/`).then(function (text) {
-        seeNewPockemon(text);
-    }, function (error) {
-        console.log(`fallito ${error}`);
-    });
-    count = count + 1;
-};
-
-queryBeforePockemon = (responseJson) => {
-    console.log(`eseguo funzione prima pockemon`);
-    if (count > 0) {
-        searchPoke(`${uri}${count}/`).then(function (text) {
-            seeNewPockemon(text);
-        }, function (error) {
-            console.log(`fallito ${error}`);
-        });
-        console.log()
-        count = count - 1;
-    } else {
-        alert("Non puoi andare in dietro se prima non vai avanti :)");
-    }
-};
-
-
-queryRandomPockemon = () => {
-    //"ottimizzazione https://davidwalsh.name/javascript-debounce-function"
-    let rand = Math.floor((Math.random() * pockemonNameList.length) + 1);
-    searchPoke(`${uri}${rand}/`).then(function (text) {
-        seeNewPockemon(text);
-    },function (error) {
-        console.log(`fallito ${error}`);
-    });
-    count = rand;   
-}
-
-let x = setInterval(queryRandomPockemon, 100);
-
-stopRandomPockemon = () =>{
-    clearInterval(x);
-};
-
-
-/**
- * funzione per disegnare il pokemon nel riqadro con il rispettivo nome
- */
-seeNewPockemon = (oggetto) => {
-    document.querySelector("#img").src = oggetto["sprites"].front_default;
-    document.querySelector("#myInput").placeholder = oggetto.name;
-}
-
-/**
- * funzione per disegnare un loader in tanto che si carica la pagina
- */
-waitNewPockemon = () => {
-    //  document.querySelector("#img").innerHTML = "STO CARICANDO";
-}
-
-/**
  * fonte del codice : https://www.w3schools.com/howto/howto_js_autocomplete.asp
  */
+
+var countries = [
+    "Afghanistan",
+    "Albania",
+    "Algeria",
+    "Andorra",
+    "Angola",
+    "Anguilla",
+    "Antigua &amp; Barbuda",
+    "Argentina",
+    "Armenia",
+    "Aruba",
+    "Australia",
+    "Austria",
+    "Azerbaijan",
+    "Bahamas",
+    "Bahrain",
+    "Bangladesh",
+    "Barbados",
+    "Belarus",
+    "Belgium",
+    "Belize",
+    "Benin",
+    "Bermuda",
+    "Bhutan",
+    "Bolivia",
+    "Bosnia &amp; Herzegovina",
+    "Botswana",
+    "Brazil",
+    "British Virgin Islands",
+    "Brunei",
+    "Bulgaria",
+    "Burkina Faso",
+    "Burundi",
+    "Cambodia",
+    "Cameroon",
+    "Canada",
+    "Cape Verde",
+    "Cayman Islands",
+    "Central Arfrican Republic",
+    "Chad",
+    "Chile",
+    "China",
+    "Colombia",
+    "Congo",
+    "Cook Islands",
+    "Costa Rica",
+    "Cote D Ivoire",
+    "Croatia",
+    "Cuba",
+    "Curacao",
+    "Cyprus",
+    "Czech Republic",
+    "Denmark",
+    "Djibouti",
+    "Dominica",
+    "Dominican Republic",
+    "Ecuador",
+    "Egypt",
+    "El Salvador",
+    "Equatorial Guinea",
+    "Eritrea",
+    "Estonia",
+    "Ethiopia",
+    "Falkland Islands",
+    "Faroe Islands",
+    "Fiji",
+    "Finland",
+    "France",
+    "French Polynesia",
+    "French West Indies",
+    "Gabon",
+    "Gambia",
+    "Georgia",
+    "Germany",
+    "Ghana",
+    "Gibraltar",
+    "Greece",
+    "Greenland",
+    "Grenada",
+    "Guam",
+    "Guatemala",
+    "Guernsey",
+    "Guinea",
+    "Guinea Bissau",
+    "Guyana",
+    "Haiti",
+    "Honduras",
+    "Hong Kong",
+    "Hungary",
+    "Iceland",
+    "India",
+    "Indonesia",
+    "Iran",
+    "Iraq",
+    "Ireland",
+    "Isle of Man",
+    "Israel",
+    "Italy",
+    "Jamaica",
+    "Japan",
+    "Jersey",
+    "Jordan",
+    "Kazakhstan",
+    "Kenya",
+    "Kiribati",
+    "Kosovo",
+    "Kuwait",
+    "Kyrgyzstan",
+    "Laos",
+    "Latvia",
+    "Lebanon",
+    "Lesotho",
+    "Liberia",
+    "Libya",
+    "Liechtenstein",
+    "Lithuania",
+    "Luxembourg",
+    "Macau",
+    "Macedonia",
+    "Madagascar",
+    "Malawi",
+    "Malaysia",
+    "Maldives",
+    "Mali",
+    "Malta",
+    "Marshall Islands",
+    "Mauritania",
+    "Mauritius",
+    "Mexico",
+    "Micronesia",
+    "Moldova",
+    "Monaco",
+    "Mongolia",
+    "Montenegro",
+    "Montserrat",
+    "Morocco",
+    "Mozambique",
+    "Myanmar",
+    "Namibia",
+    "Nauro",
+    "Nepal",
+    "Netherlands",
+    "Netherlands Antilles",
+    "New Caledonia",
+    "New Zealand",
+    "Nicaragua",
+    "Niger",
+    "Nigeria",
+    "North Korea",
+    "Norway",
+    "Oman",
+    "Pakistan",
+    "Palau",
+    "Palestine",
+    "Panama",
+    "Papua New Guinea",
+    "Paraguay",
+    "Peru",
+    "Philippines",
+    "Poland",
+    "Portugal",
+    "Puerto Rico",
+    "Qatar",
+    "Reunion",
+    "Romania",
+    "Russia",
+    "Rwanda",
+    "Saint Pierre &amp; Miquelon",
+    "Samoa",
+    "San Marino",
+    "Sao Tome and Principe",
+    "Saudi Arabia",
+    "Senegal",
+    "Serbia",
+    "Seychelles",
+    "Sierra Leone",
+    "Singapore",
+    "Slovakia",
+    "Slovenia",
+    "Solomon Islands",
+    "Somalia",
+    "South Africa",
+    "South Korea",
+    "South Sudan",
+    "Spain",
+    "Sri Lanka",
+    "St Kitts &amp; Nevis",
+    "St Lucia",
+    "St Vincent",
+    "Sudan",
+    "Suriname",
+    "Swaziland",
+    "Sweden",
+    "Switzerland",
+    "Syria",
+    "Taiwan",
+    "Tajikistan",
+    "Tanzania",
+    "Thailand",
+    "Timor L'Este",
+    "Togo",
+    "Tonga",
+    "Trinidad &amp; Tobago",
+    "Tunisia",
+    "Turkey",
+    "Turkmenistan",
+    "Turks &amp; Caicos",
+    "Tuvalu",
+    "Uganda",
+    "Ukraine",
+    "United Arab Emirates",
+    "United Kingdom",
+    "United States of America",
+    "Uruguay",
+    "Uzbekistan",
+    "Vanuatu",
+    "Vatican City",
+    "Venezuela",
+    "Vietnam",
+    "Virgin Islands (US)",
+    "Yemen",
+    "Zambia",
+    "Zimbabwe"
+];
+
 
 /*
  * param {*} inp : il valore di input dalla tastiera
  * param {*} arr : l'array dei possibll valori con cui fare il match
-*/
-autocomplete = (inp, arr) => {
+ */
+function autocomplete(inp, arr) {
     var currentFocus;
 
     /*esegui tutto quello che c'è qui dentro quando viene premuto un tasto*/
@@ -148,12 +270,6 @@ autocomplete = (inp, arr) => {
                     /*infatti inserisco il valore di questo elemento nell'input value della ricerca:*/
                     inp.value = this.getElementsByTagName("input")[0].value;
                     /*una volta cliccato chiudo tutti gli altri list*/
-                    searchPoke(`${uri}${this.getElementsByTagName("input")[0].value}/`).then(function (text) {
-                        document.querySelector("#img").src = text["sprites"].front_default;
-                    }, function (error) {
-                        console.log(`fallito ${error}`);
-                    });
-                   
                     closeAllLists();
                 });
 
@@ -234,9 +350,3 @@ autocomplete = (inp, arr) => {
         closeAllLists(e.target);
     });
 }
-
-/**
- * funzione per l'auto completamento
- */
-//Chiedere perche se lo metto qui non mi chiama
-//autocomplete(document.getElementById("myInput"), pockemonNameList);

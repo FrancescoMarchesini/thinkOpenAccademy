@@ -11,37 +11,42 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
             <!--  carico fogli di stile-->
             <link rel="stylesheet" href="./css/main.css">
+            <link rel="stylesheet" href="./css/autoSearch.css">
             <!--carico lo script -->
-            <script src="./js/script.js"></script>
+            <script language="javascript" type="text/javascript" src="./js/script.js"></script>
+            
         </head>
         <body id="body">
             <header></header>
 
             <div class="container" id="pockex">
                 <div class="row" >
+
                     <div class="col-md-12  container ">
                         <img src="./img/ball.jpeg" class="img-fluid query" alt="Responsive image" id="img">
                     </div>
                     <div class="col-md-12 "><hr></div>
-                    <div class="col-md-12 mycontainer">
-                        <button type="button" class="btn btn-primary"  onclick="decrementa()">Indietro</button>
-                        <!--<button type="button" class="btn btn-primary" onclick="askNewPockemon()">Pockemon</button>-->
-                        <div class="col-md-3 container">
-                            <!--<h2 class="testo" id="pockemo"></h2>-->
-                            <div class="form-group togliMarginForm">
-                                    <input type="text" onkeydown="queryPockemonFromKeyboard(event)" class="form-control" id="pockemo" placeholder="Nome">
-                            </div>
-                        </div>
 
-                        <button type="button" class="btn btn-primary" onclick="yo()">Avanti</button>
+                    <div class="col-md-12 mycontainer">
+                        <button type="button" class="btn btn-primary"  onclick="queryBeforePockemon()">Indietro</button>
+                        <button type="button" class="btn btn-primary" onclick="stopRandomPockemon()" checked=true >StopMe</button>
+                        <button type="button" class="btn btn-primary" onclick="queryNextPockemon()">Avanti</button>
                     </div>
-                    <div class="col-md-12 container ">
-                        
+
+                    
+                    <div class="col-md-12 mycontainer ">
+                        <form autocomplete="off" action="/action_page.php">
+                            <div class="autocomplete" style="width:300px;">
+                            <input id="myInput" type="text" name="myCountry" placeholder="Cercami">
+                            </div>
+                        </form>
                     </div>
-                        
                 </div>
             </div>
 
+                <script>
+                    autocomplete(document.getElementById("myInput"), pockemonNameList);
+                </script>
             <footer></footer>
         </body>
     </html>

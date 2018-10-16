@@ -1,0 +1,38 @@
+    <!--non specificando nessuna versione nel tag html viene usato di deafult html5-->
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <!--definisco la codifica dei caratteri-->
+            <meta charset="utf-8">
+            <title>JS</title>
+
+                
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <!--  carico fogli di stile-->
+            <link rel="stylesheet" href="./css/main.css">
+            <!--carico lo script -->
+            <script src="./js/script.js"></script>
+        </head>
+        <body id="body">
+            <header></header>
+
+       <!--     <div class="autocomplete" style="width:300px;" id="cazzo">
+                <input id="myInput" type="text" name="myCountry" value="" oninput="myFunction()" placeholder="Country">
+            </div>-->
+
+            <!--Make sure the form has the autocomplete function switched off:-->
+<form autocomplete="off" action="/action_page.php">
+    <div class="autocomplete" style="width:300px;">
+      <input id="myInput" type="text" name="myCountry" placeholder="Country">
+    </div>
+    <input type="submit">
+  </form>
+            
+  <script>
+    autocomplete(document.getElementById("myInput"), countries);
+    </script>
+
+            <footer></footer>
+        </body>
+    </html>
