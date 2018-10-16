@@ -8,6 +8,7 @@ window.onload = function () {
     }, function (error) {
         console.log(`fallito ${error}`);
     });
+
 };
 
 
