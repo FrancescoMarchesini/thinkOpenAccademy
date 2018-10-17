@@ -1,0 +1,7 @@
+Disegna questa Griglia di grandezza NxN
+
+# # # # #
+ # # # # #
+# # # # #
+ # # # # #
+# # # # #
