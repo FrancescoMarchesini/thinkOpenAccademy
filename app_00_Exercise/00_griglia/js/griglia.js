@@ -142,12 +142,3 @@ generaGriglia = () => {
  */
 generaGriglia();
 
-const restFunction = (param1, param2, ...reParam ) =>{
-    console.log(param1);
-    console.log(param2);
-    console.log(reParam);
-    [parm3, param4, param5, parSei='Italia'] = reParam;
-    console.log(parm3);
-    console.log(param5);
-    console.log(parsei);
-}
