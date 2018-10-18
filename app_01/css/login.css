@@ -1,0 +1,25 @@
+
+.mainContainer{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+.myContainer{
+    height: inherit;
+    width: 50%;
+    display: flex;
+    align-items: center; /*centra la il div verticalmente : colonne*/
+    justify-content: center; /*centra il div orizzontalmente : righe*/
+    border: 1px solid black;
+   }
+
+.myContainerItem{
+    height: 500px;
+    width: 500px;
+    background-color: aqua;
+}
+
+.general_padding{
+    margin-right: 10px;
+}
