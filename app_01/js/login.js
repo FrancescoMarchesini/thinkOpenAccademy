@@ -16,6 +16,7 @@ request = (url) => {
 
 
 myreq = () => {
+
     request().then(function (text) {
         let user = document.getElementById("myNm").value;
         let pw = document.getElementById("myPw").value;
@@ -33,6 +34,7 @@ myreq = () => {
         console.log('fottiti coglione')
         console.log(`fallito ${error}`);
     });
+
 }
 
 

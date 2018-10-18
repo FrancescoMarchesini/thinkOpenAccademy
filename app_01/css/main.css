@@ -186,3 +186,51 @@
     background-color: green;
 }
 
+/*----------------------------------------------------*/
+.myContainer{
+    display: flex;
+    /*align-items: center; */
+    /*justify-content: center; */
+    height: 300px;
+    width: 100%;
+    background-color: white;
+}
+
+.childMyContainer{
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    transform: translate(340px, 24px);
+    background-color: red;
+}
+
+.round{
+    width: 70px;
+    height: 87px;
+    border-radius: 31px;
+    background-color: white;
+    transform: translate(39px, 30px);
+}
+
+.point{
+    width:  20px;
+    height: 20px;
+    border-radius: 30px;
+    background-color: red;
+    transform: translate(600px, 100px);
+}
+
+.myContainer2{
+    height: 300px;
+    width: 100%;
+    background-color: white;
+    justify-content: center;
+  }
+
+.arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 50px solid black;
+  }
