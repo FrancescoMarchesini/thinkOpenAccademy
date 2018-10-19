@@ -1,22 +1,64 @@
 
-.col-md-6{
-    height: 50vh;
-    overflow: hide;
-}
-
-.test{
-    height: 25vh;
-    overflow: hide;
-}
-
-.test2{
-    height: 12.5vh;
-    overflow: hide;
-}
 
 
 
-.clock {
+/*------------animazione-----------------------------*/
+@keyframes rotate {
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+
+  .hours-container {
+    animation: rotate 43200s infinite linear;
+  }
+  .minutes-container {
+    animation: rotate 3600s infinite linear;
+    /*animation-timing-function: steps(60) linear;*/
+  }
+  .seconds-container {
+    animation: rotate 60s infinite linear;
+    /*animation-timing-function: steps(60) linear;*/
+  }
+
+  
+  /*grid system-------------------------------------------*/
+  .myContainer{
+    width: 99vw;
+    height: 100vh;
+  }
+
+  .clockContainer{
+    display: grid;
+    height: inherit;
+    grid-template-columns: 25%  25% 25% 25%;
+    grid-gap : 1px;
+    background-color: #000;
+    color: white;
+  }
+
+  .clockContainer > [style^='--aspect-ratio']::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 0;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }
+  
+  .clock{
+    background-color: white;
+    color : #000;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 150%;
+    display: flex;
+    align-content: center;
+    justify-items: center;
+    position: relative;
+  }
+
+  /* -------------------------my clock--------------------------*/
+  .clockME {
     border-radius: 50%;
     border: 5px solid black;
     height: 100%;
@@ -24,6 +66,14 @@
     position: absolute;
     right: 0;
     top: 0;
+  }
+
+  .clockMeTo {
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    
   }
 
   .minutes-container, .hours-container, .seconds-container {
@@ -65,21 +115,4 @@
     transform-origin: 50% 80%;
     width: 1%;
     z-index: 8;
-  }
-
-/*------------animazione-----------------------------*/
-@keyframes rotate {
-    100% {
-      transform: rotateZ(360deg);
-    }
-  }
-
-  .hours-container {
-    animation: rotate 43200s infinite linear;
-  }
-  .minutes-container {
-    animation: rotate 3600s infinite linear;
-  }
-  .seconds-container {
-    animation: rotate 60s infinite linear;
   }
