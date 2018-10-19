@@ -1,7 +1,12 @@
 request = (url) => {
+    let user = document.getElementById("myNm").value;
+    let pw = document.getElementById("myPw").value;
+    console.log(`${user} && ${pw}`);
+       
     return new Promise(function (succed, fail) {
         let req = new XMLHttpRequest();
-        req.open("GET", "https://reqres.in/api/users/2", true);
+        req.open("POST", "https://reqres.in/api/login", true);
+        req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         req.addEventListener("load", function () {
             if (req.status < 400) {
                 succed(JSON.parse(req.responseText));
@@ -9,30 +14,20 @@ request = (url) => {
                 fail(new Error(`richiesta fallita:${req.status}`));
             }
         });
-        req.send();
+        req.send(`email=${user}&password=${pw}`);
     });
 }
 
 
 
 myreq = () => {
-
+    debugger;
     request().then(function (text) {
-        let user = document.getElementById("myNm").value;
-        let pw = document.getElementById("myPw").value;
-       
-        if (user == text.data.first_name) {
-            if (pw == text.data.last_name) {
-                window.location.href = "./index.html"; 
-            }else{
-                alert("password sbagliata");
-            }
-        }else{
-            alert("user fallato");
+        if (text.token == "QpwL5tke4Pnpja7X") {
+                window.location.href = "./index.html";
         }
     }, function (error) {
-        console.log('fottiti coglione')
-        console.log(`fallito ${error}`);
+        alert(`fottiti coglione fallito ${error}`)
     });
 
 }
