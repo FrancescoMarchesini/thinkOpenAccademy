@@ -19,13 +19,16 @@ request = (url) => {
 }
 
 
-
+/**
+ * il token o id di sessione, mi serve per tutte le successive chiamate versone il server
+ * che andremo a fare le chiamate
+ * locale storage del browser locale_store.getItem = 
+ * locale_storage != session_storage per riottenere il dato faremo sessionStorage.getItem('token')
+ */
 myreq = () => {
-    debugger;
     request().then(function (text) {
-        if (text.token == "QpwL5tke4Pnpja7X") {
-                window.location.href = "./index.html";
-        }
+        sessionStorage.setItem("token", text.token);
+        window.location.href = "./index.html";
     }, function (error) {
         alert(`fottiti coglione fallito ${error}`)
     });
@@ -38,3 +41,6 @@ window.addEventListener('keypress', function (e) {
        myreq()
     }
 }, false);
+
+
+//disable web-security :  google-chrome --disable-web-security 

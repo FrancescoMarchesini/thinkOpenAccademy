@@ -22,12 +22,25 @@ range = (start, stop, step) =>{
     }
 
     return res;
-}
+};
 
  reversArray = (array) =>{
+    let newArray = [];
+    for(let i = array.length; i >= 0; i--){
+        newArray.push(array[i]);
+    }
+    return newArray;
+ };
 
+ reversArrayInPlace = (array) =>{
+
+  //  for(let j = 0; j < array.length; j++){   
+        for(let i = array.length; i >= 0; i--){
+            array[i] = array[i];
+        }
+   // }
     return array;
- }
+ }; 
 
- let array = range(0, 50, 2);
- console.log(`il vettore di partenza ${array} ed il suo reverso ${reversArray(array)}`);
+ let array = range(0, 10, 2);
+ console.log(`il vettore di partenza ${array} ed il suo reverso ${reversArray(array)} ed il suo reverso in place ${reversArrayInPlace(array)}`);
