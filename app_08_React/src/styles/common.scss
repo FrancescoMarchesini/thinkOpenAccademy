@@ -1,0 +1,22 @@
+$background-color: black;
+$Screen-width : 100vw;
+$Screen-height : 100vh;
+$border-color : yellow;
+
+@mixin flex-container-basic {
+    background-color: $background-color;
+    width: $Screen-width;
+    height: $Screen-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin center-all {
+    top                   : '50%';
+    left                  : '50%';
+    right                 : 'auto';
+    bottom                : 'auto';
+    margin-right          : '-50%';
+    transform             : 'translate(-50%, -50%)';
+}

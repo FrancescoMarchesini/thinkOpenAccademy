@@ -1,0 +1,8 @@
+@import '../../styles/common.scss';
+
+.myForm{
+    grid-template-columns: 100%;
+    align-items: center;
+    justify-content: center;
+    //border: 1px solid $border-color;
+}

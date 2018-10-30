@@ -1,0 +1,42 @@
+@import '../../styles/common.scss';
+
+
+.basic-class{
+    @include flex-container-basic ;
+}
+
+.welcomLink{
+    width: 70%;
+    margin-left: 15%;
+    background-color: yellow;
+    color: black;
+    box-shadow: 0 24px 36px 0 rgba(252, 246, 173, 0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 20px;
+    border: none;
+    outline:none;
+    border: 0 black solid;
+}
+
+.welcomButton:active {
+    outline: none;
+    border: 0 black solid;
+}
+
+.Overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+}
+
+.Modal {
+    position: absolute;
+    @include center-all;
+    width : auto;
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+   // border : 1px solid $border-color;
+  }

@@ -1,0 +1,42 @@
+@import '../../styles/common.scss';
+
+.flex-container{
+    @include flex-container-basic;
+}
+
+.flex-item{
+    width: 30%;
+    margin-bottom: 100px;
+    background-color: black;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+.welcomLink{
+    width: 70%;
+    margin-left: 15%;
+    background-color: yellow;
+    color: black;
+    box-shadow: 0 24px 36px 0 rgba(252, 246, 173, 0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 20px;
+    border: none;
+    outline:none;
+    border: 0 black solid;
+}
+
+.welcomButton:active {
+    outline: none;
+    border: 0 black solid;
+}
+
+* {
+	outline: none;
+}
+
+a{
+    color:black;
+}
+a:hover{
+    color:black;
+}
