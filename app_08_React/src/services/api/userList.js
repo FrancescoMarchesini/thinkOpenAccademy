@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { isContext } from 'vm';
 
 export default function UserListApi(service, context) {
     const options = {

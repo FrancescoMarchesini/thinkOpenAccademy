@@ -7,19 +7,30 @@ import './form.scss'
 import LoginMe from '../../services/api/myLogin'
 
 
+import {
+    BrowserRouter,
+    HashRouter,
+    Switch,
+    Route,
+    Redirect,
+    browserHistory
+} from 'react-router-dom'
+
+
 class GenericForm extends Component{
     constructor(props){
         super(props);
 
         this.state = {
             user: '',
-            pw : ''
+            pw : '',
+            redirect: false
         }
 
         this.handleChangeUser = this.handleChangeUser.bind(this);
         this.handleChangePw = this.handleChangePw.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-     //   this.redirectToUserList = this.redirectToUserList.bind(this);
+        this.redirectToUserList = this.redirectToUserList.bind(this);
     }
 
     handleChangeUser(event) {
@@ -39,19 +50,22 @@ class GenericForm extends Component{
     }
 
     redirectToUserList(){
-        debugger;
-        console.log("ok ci sono")
-		//this.context.router.push('/UserList')
+        this.setState({redirect: true })
 	}
                 
     render(){
-        return(
-            <div className="myForm">
+        
+        if(this.state.redirect){
+            return( <Redirect to='/userList' />)
+        }else{
+            return(
+                <div className="myForm">
                 <GenericInput type={this.props.typeInputOne}  placeholder={this.props.placeholderOne} onChange={this.handleChangeUser}/>
-                <GenericInput type={this.props.typeInputTwo} placeholder={this.props.placeholderTwo} onChange={this.handleChangePw}/>
+                <GenericInput type={this.props.typeInputTwo} placeholder={this.props.placeholderTwo} onChange={this.handleChangePw}/>                    
                 <GenericButton text={this.props.placeholderButton} action={this.handleSubmit} class_btn={this.props.class_btn}/>
-            </div>
-      )
+                </div>
+            )
+        }
     }
 }
 

@@ -9,8 +9,7 @@ export default function LoginMe(username, password, context){
     };
     axios(option).then((response) =>{
         sessionStorage.setItem('token', response.data.token)
-        // <Redirect to="/UserList" />
-        context.redirectToUserList();
+        context.redirectToUserList(); 
        
     }).catch(error =>{
         alert(error)

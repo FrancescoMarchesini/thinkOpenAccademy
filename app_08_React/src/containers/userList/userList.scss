@@ -1,0 +1,51 @@
+@import '../../styles/common.scss';
+
+.center_text{
+    text-align: center;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 64px;
+    color: white;
+}
+
+.header-table{
+    text-align: center;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 100;
+    font-size: 42px;
+    color: $border-color;
+    background-color:  $background-color;
+}
+
+.header-table2{
+    display: none;
+    padding:0px;
+}
+
+.space{
+    display:flex;
+    width: 100%;
+    height: 0px;  
+
+}
+
+.space-due{
+    display:flex;
+    width: 100%;
+    height: 100px;    
+    background-color:  $border-color;
+    border: 0.5px solid $border-color;
+}
+
+.generic{
+    background-color: $background-color;
+    width: $Screen-width;
+    height: $Screen-height;
+}
+
+.space-tre{
+    width: $Screen-width;
+    height: 430px;
+    border: 0.5px solid $border-color;
+}

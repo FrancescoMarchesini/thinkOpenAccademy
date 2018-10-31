@@ -45,7 +45,7 @@ const Routes = ({store}) =>(
             <div>
                 <Route exact path="/" component={WelcomePage}/>
                 <Route path="/login" component={Login}/>
-                <PrivateRoute path="/userList" component={UserList}/>
+                <PrivateRoute exact path="/userList" component={UserList}/>
             </div>
         </BrowserRouter>
     </Provider>
